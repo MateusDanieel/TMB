@@ -1,3 +1,55 @@
-* {
-    background-color: red;
+body {
+    background-color: #3b3b3b;
+    color: #FFF;
+
+    * {
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+.sec-main {
+    padding: 0 20px;
+
+    &__content {
+        width: 100%;
+        max-width: 360px;
+        background-color: #2e2e2e;
+        margin: 20px auto;
+        padding: 40px;
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+
+            &__radio {
+                display: flex;
+                margin: 0 0 24px;
+
+                input {
+                    display: none;
+
+                    & + label {
+                        text-transform: uppercase;
+                        display: block;
+                        width: 50%;
+                        padding: 20px 0;
+                        text-align: center;
+                        background-color: transparent;
+                        font-weight: 600;
+                        color: #FFF;
+
+                        &:hover {
+                            background-color: #6B29FF;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:checked + label {
+                        background-color: #6B29FF;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
 }
