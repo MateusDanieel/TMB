@@ -16,36 +16,69 @@
         <section class="sec-main__content">
 
             <form action="" method="post" class="sec-main__content__form">
+
+                <label class="sec-main__content__form__label">
+                    Gênero
+                </label>
+
                 <div class="sec-main__content__form__radio">
-                    <input type="radio" id="masc" name="gender" value="Masculino" checked>
-                    <label for="masc">Masculino</label>
+                    <input type="radio" id="genderMasc" name="gender" value="Masculino" checked>
+                    <label for="genderMasc">Masculino</label>
     
-                    <input type="radio" id="fem" name="gender" value="Feminino">
-                    <label for="fem">Feminino</label>
+                    <input type="radio" id="genderFem" name="gender" value="Feminino">
+                    <label for="genderFem">Feminino</label>
+                </div>
+
+                <label class="sec-main__content__form__label">
+                    Atividades Físicas <small>(min. 3x/sem)</small>
+                </label>
+
+                <div class="sec-main__content__form__radio">
+                    <input type="radio" id="atvFisS" name="atvFis" value="Sim" checked>
+                    <label for="atvFisS">Sim</label>
+    
+                    <input type="radio" id="atvFisN" name="atvFis" value="Não">
+                    <label for="atvFisN">Não</label>
+                </div>
+
+                <label class="sec-main__content__form__label">
+                    Objetivo
+                </label>
+
+                <div class="sec-main__content__form__radio">
+                    <input type="radio" id="objPeso" name="obj" value="Perder peso" checked>
+                    <label for="objPeso">Emagrecer</label>
+    
+                    <input type="radio" id="objHiper" name="obj" value="Hipertrofia">
+                    <label for="objHiper">Hipertrofia</label>
                 </div>
     
-                <label for="peso">
-                    Seu peso <small>(em kg)</small>
+                <label for="peso" class="sec-main__content__form__label">
+                    Peso <small>(em kg)</small>
                 </label>
 
-                <input type="number" id="peso" placeholder="Ex.: 80.00" maxlength="5" required />
+                <input type="number" id="peso" placeholder="Ex.: 80.00" maxlength="5" class="sec-main__content__form__input" required />
 
-                <label for="altura">
-                    Sua altura <small>(em cm)</small>
+                <label for="altura" class="sec-main__content__form__label">
+                    Altura <small>(em cm)</small>
                 </label>
 
-                <input type="number" id="altura" placeholder="Ex.: 170" maxlength="3" required />
+                <input type="number" id="altura" placeholder="Ex.: 170" maxlength="3" class="sec-main__content__form__input" required />
 
-                <label for="idade">
-                    Sua idade
+                <label for="idade" class="sec-main__content__form__label">
+                    Idade
                 </label>
 
-                <input type="number" id="idade" placeholder="Ex.: 25" maxlength="2" required />
+                <input type="number" id="idade" placeholder="Ex.: 25" maxlength="2" class="sec-main__content__form__input" required />
 
-                <button type="submit" class="sec-main__content__cta">
+                <button type="submit" class="sec-main__content__form__cta">
                     Calcular
                 </button>
             </form>
+
+            <div class="sec-main__content__result">
+                aaa
+            </div>
             
             
         </section>
