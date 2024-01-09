@@ -1,0 +1,103 @@
+(() => {
+
+    const form = document.querySelector('.sec-main__content__form');
+    const result = document.querySelector('.sec-main__content__result');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        result.classList.add('show');
+        result.innerHTML = '';
+
+        const peso = document.querySelector('.sec-main__content__form__input#peso').value;
+        const altura = document.querySelector('.sec-main__content__form__input#altura').value;
+        const idade = document.querySelector('.sec-main__content__form__input#idade').value;
+        const radiobtns = document.querySelectorAll('.sec-main__content__form__radio input');
+
+        const getTmbMasc = 66.47 + (13.75 * peso) + (5.003 * altura) - (6.775 * idade);
+        const getTmbFem = 655.09 + (9.563 * peso) + (1.85 * altura) - (4.676 * idade);
+        const getImc = (peso / altura / altura) * 10000;
+        const getQtdAgua = 0.035 * peso;
+        let getGender = '';
+
+        if (getImc < 18.5) {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} abaixo do peso ideal.</p>`;
+        } else if (getImc >= 18.5 && getImc < 25) {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} peso ideal.</p>`;
+        } else if (getImc >= 25 && getImc < 30) {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} acima do peso.</p>`;
+        } else if (getImc >= 30 && getImc < 35) {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} obesidade grau I.</p>`;
+        } else if (getImc >= 35 && getImc < 40) {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} obesidade grau II.</p>`;
+        } else {
+            result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} obesidade grau III (mórbida).</p>`;
+        }
+
+        radiobtns.forEach((el, i, arr) => {
+            
+            if (el.id === 'genderMasc' && el.checked) {
+
+                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbMasc.toFixed(2)} calorias.</p>`;
+
+                getGender = 'M';
+
+            } else if (el.id === 'genderFem' && el.checked) {
+
+                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbFem.toFixed(2)} calorias.</p>`;
+
+                getGender = 'F';
+
+            } else if (el.id === 'atvFisS' && el.checked) {
+
+                arr.forEach((item) => {
+                    if (item.id === 'objPeso' && item.checked) {
+
+                        if (getGender === 'F') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbFem.toFixed(2)} calorias por dia.</p>`;
+                        } else if (getGender === 'M') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbMasc.toFixed(2)} calorias por dia.</p>`;
+                        }
+                        
+                    } else if (item.id === 'objHiper' && item.checked) {
+                        if (getGender === 'F') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        } else if (getGender === 'M') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        }
+                    } 
+                });
+
+            } else if (el.id === 'atvFisN' && el.checked) {
+
+                arr.forEach((item) => {
+                    if (item.id === 'objPeso' && item.checked) {
+
+                        if (getGender === 'F') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem - (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        } else if (getGender === 'M') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc - (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        }
+                        
+                    } else if (item.id === 'objHiper' && item.checked) {
+                        if (getGender === 'F') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        } else if (getGender === 'M') {
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                        }
+                    } 
+                });
+
+            } 
+
+
+        });
+
+        result.innerHTML += `<p><b>QTD. de Água Recomendada:</b> ${getQtdAgua.toFixed(1)}L por dia.</p>`;
+        
+
+
+
+      
+    });
+
+})();

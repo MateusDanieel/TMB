@@ -5,19 +5,96 @@
     <meta charset="utf-8">
     <title>Calculadora de IMC e TMB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 </head>
 <body>
     
+    <main class="sec-main">
+        <section class="sec-main__content">
 
+            <form action="" method="post" class="sec-main__content__form">
 
+                <label class="sec-main__content__form__label">
+                    Gênero
+                </label>
 
-
-
-
-
-
+                <div class="sec-main__content__form__radio">
+                    <input type="radio" id="genderMasc" name="gender" value="Masculino" checked>
+                    <label for="genderMasc">Masculino</label>
     
+                    <input type="radio" id="genderFem" name="gender" value="Feminino">
+                    <label for="genderFem">Feminino</label>
+                </div>
+
+                <label class="sec-main__content__form__label">
+                    Atividades Físicas <small>(min. 3x/sem)</small>
+                </label>
+
+                <div class="sec-main__content__form__radio">
+                    <input type="radio" id="atvFisS" name="atvFis" value="Sim" checked>
+                    <label for="atvFisS">Sim</label>
+    
+                    <input type="radio" id="atvFisN" name="atvFis" value="Não">
+                    <label for="atvFisN">Não</label>
+                </div>
+
+                <label class="sec-main__content__form__label">
+                    Objetivo
+                </label>
+
+                <div class="sec-main__content__form__radio">
+                    <input type="radio" id="objPeso" name="obj" value="Perder peso" checked>
+                    <label for="objPeso">Emagrecer</label>
+    
+                    <input type="radio" id="objHiper" name="obj" value="Hipertrofia">
+                    <label for="objHiper">Hipertrofia</label>
+                </div>
+    
+                <label for="peso" class="sec-main__content__form__label">
+                    Peso <small>(em kg)</small>
+                </label>
+
+                <input type="number" id="peso" placeholder="Ex.: 80" class="sec-main__content__form__input" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
+
+                <label for="altura" class="sec-main__content__form__label">
+                    Altura <small>(em cm)</small>
+                </label>
+
+                <input type="number" id="altura" placeholder="Ex.: 170" class="sec-main__content__form__input" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
+
+                <label for="idade" class="sec-main__content__form__label">
+                    Idade
+                </label>
+
+                <input type="number" id="idade" placeholder="Ex.: 25" class="sec-main__content__form__input" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
+
+                <button type="submit" class="sec-main__content__form__cta">
+                    Calcular
+                </button>
+            </form>
+
+            <div class="sec-main__content__result">
+                
+            </div>
+            
+            <small class="sec-main__content__warning">
+                Os dados apresentados neste relatório são apenas uma estimativa, utilizando como base a fórmula de Harris Benedict (para o cálculo da TMB) e informações disponibilizadas pela Organização Mundial de Saúde (OMS). Para uma avaliação mais precisa consulte um nutrólogo e/ou um nutricionista de sua preferência.
+            </small>
+            
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>
