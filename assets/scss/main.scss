@@ -111,6 +111,27 @@ input[type=number] {
             margin: 24px 0 0;
             padding: 20px;
             display: none;
+
+            &.show {
+                display: block;
+            }
+
+            p {
+                text-align: center;
+                text-transform: uppercase;
+
+                b {
+                    display: block;
+                }
+            }
+        }
+
+        &__warning {
+            font-weight: 300;
+            font-style: italic;
+            opacity: .6;
+            margin: 24px 0 0;
+            display: block;
         }
     }
 }

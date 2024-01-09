@@ -57,19 +57,19 @@
                     Peso <small>(em kg)</small>
                 </label>
 
-                <input type="number" id="peso" placeholder="Ex.: 80.00" maxlength="5" class="sec-main__content__form__input" required />
+                <input type="number" id="peso" placeholder="Ex.: 80" class="sec-main__content__form__input" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
 
                 <label for="altura" class="sec-main__content__form__label">
                     Altura <small>(em cm)</small>
                 </label>
 
-                <input type="number" id="altura" placeholder="Ex.: 170" maxlength="3" class="sec-main__content__form__input" required />
+                <input type="number" id="altura" placeholder="Ex.: 170" class="sec-main__content__form__input" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
 
                 <label for="idade" class="sec-main__content__form__label">
                     Idade
                 </label>
 
-                <input type="number" id="idade" placeholder="Ex.: 25" maxlength="2" class="sec-main__content__form__input" required />
+                <input type="number" id="idade" placeholder="Ex.: 25" class="sec-main__content__form__input" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
 
                 <button type="submit" class="sec-main__content__form__cta">
                     Calcular
@@ -77,9 +77,12 @@
             </form>
 
             <div class="sec-main__content__result">
-                aaa
+                
             </div>
             
+            <small class="sec-main__content__warning">
+                Os dados apresentados neste relatório são apenas uma estimativa, utilizando como base a fórmula de Harris Benedict (para o cálculo da TMB) e informações disponibilizadas pela Organização Mundial de Saúde (OMS). Para uma avaliação mais precisa consulte um nutrólogo e/ou um nutricionista de sua preferência.
+            </small>
             
         </section>
     </main>
