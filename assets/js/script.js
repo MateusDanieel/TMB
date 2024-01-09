@@ -17,6 +17,9 @@
         const getTmbFem = 655.09 + (9.563 * peso) + (1.85 * altura) - (4.676 * idade);
         const getImc = (peso / altura / altura) * 10000;
         const getQtdAgua = 0.035 * peso;
+        const getCreatina = 0.07 * peso;
+        const getProtein = peso * 2.0;
+
         let getGender = '';
 
         if (getImc < 18.5) {
@@ -64,6 +67,10 @@
                         } else if (getGender === 'M') {
                             result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
                         }
+
+                        result.innerHTML += `<p><b>QTD. de Proteína Recomendada: </b> ${getProtein.toFixed(1)}g por dia.</p>`;
+
+                        result.innerHTML += `<p><b>QTD. de Creatina Recomendada: </b> ${getCreatina.toFixed(1)}g por dia.</p>`;
                     } 
                 });
 
@@ -94,10 +101,6 @@
 
         result.innerHTML += `<p><b>QTD. de Água Recomendada:</b> ${getQtdAgua.toFixed(1)}L por dia.</p>`;
         
-
-
-
-      
     });
 
 })();
