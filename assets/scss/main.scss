@@ -22,6 +22,34 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.sec-nav {
+    &__content {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 auto;
+        padding: 10px 20px;
+        
+        a {
+            color: #FFF;
+            margin: 0 5px;
+            
+            img {
+                display: block;
+                width: 30px;
+                opacity: .7;
+                filter: invert(100%);
+            }
+
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
 .sec-main {
     @media (max-width: 640px) {
         padding: 0 20px;
@@ -132,6 +160,23 @@ input[type=number] {
             opacity: .6;
             margin: 24px 0 0;
             display: block;
+        }
+    }
+}
+
+.sec-footer {
+    margin: 50px 0 20px;
+
+    p {
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 300;
+        a {
+            font-weight: 400;
+            text-decoration: none;
+            color: rgba(#FFF, 1);
         }
     }
 }

@@ -20,6 +20,27 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.sec-nav__content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+.sec-nav__content a {
+  color: #FFF;
+  margin: 0 5px;
+}
+.sec-nav__content a img {
+  display: block;
+  width: 30px;
+  opacity: 0.7;
+  filter: invert(100%);
+}
+.sec-nav__content a:hover img {
+  opacity: 1;
+}
+
 @media (max-width: 640px) {
   .sec-main {
     padding: 0 20px;
@@ -117,6 +138,22 @@ input[type=number] {
   opacity: 0.6;
   margin: 24px 0 0;
   display: block;
+}
+
+.sec-footer {
+  margin: 50px 0 20px;
+}
+.sec-footer p {
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+}
+.sec-footer p a {
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
