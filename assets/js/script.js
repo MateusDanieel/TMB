@@ -55,7 +55,7 @@
                     result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% baixo.</p>`;
                 }
 
-                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbMasc.toFixed(2)} calorias.</p>`;
+                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbMasc.toFixed(0)} calorias.</p>`;
 
                 getGender = 'M';
 
@@ -75,7 +75,7 @@
                     result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% baixo.</p>`;
                 }
 
-                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbFem.toFixed(2)} calorias.</p>`;
+                result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbFem.toFixed(0)} calorias.</p>`;
 
                 getGender = 'F';
 
@@ -85,16 +85,16 @@
                     if (item.id === 'objPeso' && item.checked) {
 
                         if (getGender === 'F') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbFem.toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbFem.toFixed(0)} calorias por dia.</p>`;
                         } else if (getGender === 'M') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbMasc.toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${getTmbMasc.toFixed(0)} calorias por dia.</p>`;
                         }
                         
                     } else if (item.id === 'objHiper' && item.checked) {
                         if (getGender === 'F') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         } else if (getGender === 'M') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         }
 
                     }
@@ -107,16 +107,16 @@
                     if (item.id === 'objPeso' && item.checked) {
 
                         if (getGender === 'F') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem - (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem - (getTmbFem * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         } else if (getGender === 'M') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc - (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc - (getTmbMasc * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         }
 
                     } else if (item.id === 'objHiper' && item.checked) {
                         if (getGender === 'F') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         } else if (getGender === 'M') {
-                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
+                            result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(0)} calorias por dia.</p>`;
                         }
 
                         
