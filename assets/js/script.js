@@ -21,6 +21,7 @@
         const getProtein = peso * 2.0;
 
         let getGender = '';
+        let getGC = '';
 
         if (getImc < 18.5) {
             result.innerHTML += `<p><b>Índice de Massa Corporal (IMC):</b> ${getImc.toFixed(2)} abaixo do peso ideal.</p>`;
@@ -40,11 +41,39 @@
             
             if (el.id === 'genderMasc' && el.checked) {
 
+                getGC = (1.20 * getImc) + (0.23 * idade) - (10.8 * 1) - 5.4;
+
+                if (getGC > 10 && getGC <= 20) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% adequado.</p>`;
+                } else if (getGC > 20 && getGC <= 25) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% moderadamente alto.</p>`;
+                } else if (getGC > 25 && getGC <= 31) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% alto.</p>`;
+                } else if (getGC > 31) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% excessivamente alto.</p>`;
+                } else {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% baixo.</p>`;
+                }
+
                 result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbMasc.toFixed(2)} calorias.</p>`;
 
                 getGender = 'M';
 
             } else if (el.id === 'genderFem' && el.checked) {
+
+                getGC = (1.20 * getImc) + (0.23 * idade) - (10.8 * 0) - 5.4;
+
+                if (getGC > 15 && getGC <= 25) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% adequado.</p>`;
+                } else if (getGC > 25 && getGC <= 30) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% moderadamente alto.</p>`;
+                } else if (getGC > 30 && getGC <= 36) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% alto.</p>`;
+                } else if (getGC > 36) {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% excessivamente alto.</p>`;
+                } else {
+                    result.innerHTML += `<p><b>% de Gordura Estimado (PCG): </b> ${getGC.toFixed(0)}% baixo.</p>`;
+                }
 
                 result.innerHTML += `<p><b>Taxa Metabólica Basal (TMB):</b> ${getTmbFem.toFixed(2)} calorias.</p>`;
 
@@ -68,10 +97,8 @@
                             result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
                         }
 
-                        result.innerHTML += `<p><b>QTD. de Proteína Recomendada: </b> ${getProtein.toFixed(1)}g por dia.</p>`;
+                    }
 
-                        result.innerHTML += `<p><b>QTD. de Creatina Recomendada: </b> ${getCreatina.toFixed(1)}g por dia.</p>`;
-                    } 
                 });
 
             } else if (el.id === 'atvFisN' && el.checked) {
@@ -84,22 +111,32 @@
                         } else if (getGender === 'M') {
                             result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc - (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
                         }
-                        
+
                     } else if (item.id === 'objHiper' && item.checked) {
                         if (getGender === 'F') {
                             result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbFem + (getTmbFem * 0.20)).toFixed(2)} calorias por dia.</p>`;
                         } else if (getGender === 'M') {
                             result.innerHTML += `<p><b>Dieta Recomendada:</b> ${(getTmbMasc + (getTmbMasc * 0.20)).toFixed(2)} calorias por dia.</p>`;
                         }
+
+                        
                     } 
                 });
 
             } 
 
+            
+
 
         });
 
+        result.innerHTML += `<p><b>QTD. de Proteína Recomendada: </b> ${getProtein.toFixed(1)}g por dia.</p>`;
+
+        result.innerHTML += `<p><b>QTD. de Creatina Recomendada: </b> ${getCreatina.toFixed(1)}g por dia.</p>`;
+
         result.innerHTML += `<p><b>QTD. de Água Recomendada:</b> ${getQtdAgua.toFixed(1)}L por dia.</p>`;
+
+        console.log(getGC)
         
     });
 
