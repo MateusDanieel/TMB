@@ -101,10 +101,10 @@ input[type=number] {
     .sec-main__content__result.show {
       display: block; }
     .sec-main__content__result p {
-      text-align: center;
-      text-transform: uppercase; }
+      text-align: center; }
       .sec-main__content__result p b {
-        display: block; }
+        display: block;
+        text-transform: uppercase; }
   .sec-main__content__warning {
     font-weight: 300;
     font-style: italic;
