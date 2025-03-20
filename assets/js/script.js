@@ -138,9 +138,9 @@
 
         result.innerHTML += `<p><b>QTD. de Água Recomendada</b> ≈ ${getQtdAgua.toFixed(1)}L por dia</p>`;
         
-        result.innerHTML += `<p><b>Frequência Cardíaca Máxima</b> ≈ ${getFreqCardMax.toFixed(1)}bpm</p>`;
+        result.innerHTML += `<p><b>Frequência Cardíaca Máxima</b> ≈ ${getFreqCardMax.toFixed(1)} bpm</p>`;
 
-        result.innerHTML += `<p><b>Freq. Cardíaca Recomendada durante exercícios aeróbicos</b> ≈ ${getCardio.toFixed(1)}bpm</p>`;
+        result.innerHTML += `<p><b>Freq. Cardíaca Recomendada durante exercícios aeróbicos</b> ≈ ${getCardio.toFixed(1)} bpm</p>`;
         
     });
 
