@@ -4,11 +4,11 @@ Calculadora de Taxa Metabólica Basal (TMB) desenvolvida para auxiliar no cálcu
 
 ## 🚀 Demonstração
 
-Acesse a calculadora online: **[TMB Calculator](https://mateusdanieel.github.io/TMB/)**
+Acesse a calculadora online: **[Calculadora de IMC e TMB](https://mateusdanieel.github.io/TMB/)**
 
 ## 📌 Funcionalidades
 
-- Cálculo da TMB com base na equação de Mifflin-St Jeor.
+- Cálculo da TMB com base na fórmula de Harris Benedict.
 - Opção para calcular a necessidade calórica diária com base no nível de atividade.
 - Interface simples e responsiva.
 
@@ -29,10 +29,6 @@ Acesse a calculadora online: **[TMB Calculator](https://mateusdanieel.github.io/
    cd TMB
    ```
 3. Abra o arquivo `index.html` no navegador.
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/MateusDanieel/TMB/blob/main/LICENSE) para mais detalhes.
 
 ## 📬 Contato
 
