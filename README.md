@@ -1,7 +1,5 @@
 # TMB - Calculadora de Taxa Metabólica Basal
 
-![TMB Calculator](https://mateusdanieel.github.io/TMB/assets/banner.png)
-
 Calculadora de Taxa Metabólica Basal (TMB) desenvolvida para auxiliar no cálculo do gasto energético diário com base em informações como idade, peso, altura e nível de atividade física.
 
 ## 🚀 Demonstração
