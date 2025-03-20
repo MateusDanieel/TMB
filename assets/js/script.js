@@ -19,6 +19,8 @@
         const getQtdAgua = 0.035 * peso;
         const getCreatina = 0.07 * peso;
         const getProtein = peso * 2.0;
+        const getFreqCardMax = 220 - idade;
+        const getCardio = getFreqCardMax * 0.75;
 
         let getGender = '';
         let getGC = '';
@@ -135,6 +137,10 @@
         result.innerHTML += `<p><b>QTD. de Creatina Recomendada</b> ${getCreatina.toFixed(1)}g por dia</p>`;
 
         result.innerHTML += `<p><b>QTD. de Água Recomendada</b> ${getQtdAgua.toFixed(1)}L por dia</p>`;
+        
+        result.innerHTML += `<p><b>Frequência Cardíaca Máxima</b> ≈${getFreqCardMax.toFixed(1)}bpm</p>`;
+
+        result.innerHTML += `<p><b>Freq. Cardíaca Recomendada durante exercícios aeróbicos</b> ≈${getCardio.toFixed(1)}bpm</p>`;
         
     });
 
